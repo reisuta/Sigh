@@ -1,0 +1,30 @@
+<%= form_with(model: @aim, local: true) do |f| %>
+  <%= render "shared/error_messages", model: @aim %>
+  <div class="form-group mb-3">
+    <%= f.label :title, '目標名', class: 'form-label background-color' %>
+    <%= f.text_field :title, class: 'form-control', readonly: action==='show' %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :reason, '理由', class: 'form-label background-color' %>
+    <%= f.text_area :reason, class: 'form-control', readonly: action==='show' %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :advantage, '得られるもの', class: 'form-label background-color' %>
+    <%= f.text_area :advantage, class: 'form-control', readonly: action==='show' %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :difficulty, '難易度', class: 'form-label background-color' %>
+    <%= f.text_field :difficulty, class: 'form-control', readonly: action==='show' %>
+  </div>
+
+  <div class="form-group mb-3">
+    <% if action==='show' %>
+      <%= link_to '編集', edit_aim_path(@aim.id), class: 'btn btn-primary' %>
+    <% else %>
+      <%= f.submit "#{ @aim.new_record? ? '新規作成' : '更新' }", class: 'mt-3 btn btn-primary' %>
+    <% end %>
+  </div>
+<% end %>
