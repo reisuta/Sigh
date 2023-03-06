@@ -16,6 +16,9 @@ gem "bootsnap", require: false
 gem 'ransack'
 gem 'kaminari'
 gem 'bootstrap'
+gem 'google-api-client'
+gem 'dotenv-rails'
+gem 'sassc-rails'
 
 group :development, :test do
   gem 'byebug'
