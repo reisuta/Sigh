@@ -6,8 +6,8 @@ RUN apk update && \
     apk add --virtual build-packages --no-cache build-base curl-dev
 RUN mkdir /myapp
 WORKDIR /myapp
-ADD Gemfile /myapp/Gemfile
-ADD Gemfile.lock /myapp/Gemfile.lock
+ADD ./Gemfile /myapp/Gemfile
+ADD ./Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
 RUN apk del build-packages
 ADD . /myapp
