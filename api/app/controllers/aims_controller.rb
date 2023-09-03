@@ -9,6 +9,7 @@ class AimsController < ApplicationController
   def show
   end
   
+  
 
   def new
     @aim = Aim.new
@@ -50,5 +51,9 @@ class AimsController < ApplicationController
 
    def aim_params
     params.require(:aim).permit(:title, :reason, :advantage, :difficulty)
+   end
+
+   def print_hello
+     puts 'hello world'
    end
 end
